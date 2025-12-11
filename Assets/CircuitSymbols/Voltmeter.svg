@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="12"
+   height="12"
+   viewBox="0 0 12 12"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="voltmeter.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="35.664698"
+     inkscape:cx="2.6917373"
+     inkscape:cy="5.0890659"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs1" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"><circle
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path1"
+       cx="6"
+       cy="6"
+       r="5.5" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7px;font-family:System-ui;-inkscape-font-specification:'System-ui Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="3.6621094"
+       y="8.4506836"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="3.6621094"
+         y="8.4506836">V</tspan></text><path
+       d="M 8.303711,3.5493162 6.6152344,8.4506838 H 5.3642577 L 3.696289,3.5493162 H 4.8857421 L 5.9077147,6.960449 q 0.082031,0.2768555 0.099121,0.4887696 h 0.020508 q 0.023926,-0.229004 0.105957,-0.5024415 L 7.1484375,3.5493162 Z"
+       id="text1-5"
+       style="font-weight:bold;font-size:7px;font-family:System-ui;-inkscape-font-specification:'System-ui Bold';stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       aria-label="V" /></g></svg>

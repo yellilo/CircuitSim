@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6uscq0xiyt1n"]
+
+[ext_resource type="Script" uid="uid://cyafgmximtf05" path="res://CircuitBoardSelector.cs" id="1_og4jd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bupin"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartStack" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_right = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="StartStack"]
+layout_mode = 2
+text = "CircuitSim"
+label_settings = SubResource("LabelSettings_bupin")
+horizontal_alignment = 1
+
+[node name="CircuitsScrollContainer" type="ScrollContainer" parent="StartStack"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("1_og4jd")
+
+[node name="CircuitsContainer" type="VBoxContainer" parent="StartStack/CircuitsScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
