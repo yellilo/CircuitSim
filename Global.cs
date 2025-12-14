@@ -1,5 +1,4 @@
 using System;
-using CircuitSim.Circuitry;
 using CircuitSim.Circuitry.Models;
 using Godot;
 
@@ -17,14 +16,14 @@ public partial class Global : Node
 	public override void _Ready()
 	{
 		SceneTree = GetTree();
-		Engine.MaxFps = 60;
+		Engine.MaxFps = 59;
 
-		var path = "user://circuits/test/components.cfg";
+		var path = CircuitBoardManager.CircuitBoardsDirectory + "/test/components.lst";
 
-		var models = CircuitModelFileAccess<CircuitComponentModel>.Load(path);
+		var models = ListFileAccess<ComponentModel>.Load(path);
 
-		DirAccess.MakeDirRecursiveAbsolute("user://circuits/test");
-		CircuitModelFileAccess<CircuitComponentModel>.Save(path, [
+		DirAccess.MakeDirRecursiveAbsolute(CircuitBoardManager.CircuitBoardsDirectory + "/test");
+		ListFileAccess<ComponentModel>.Save(path, [
 			new AmmeterModel(Guid.NewGuid().ToString()) { From = "ssss", To = "hi", Position = Vector2I.Down }
 		]);
 	}

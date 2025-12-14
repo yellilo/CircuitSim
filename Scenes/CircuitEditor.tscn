@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/autohide = 0
 theme_override_styles/split_bar_background = SubResource("StyleBoxFlat_oc120")
-split_offset = 1658
+split_offset = 1338
 script = ExtResource("3_oc120")
 CircuitBoard = NodePath("CircuitBoard")
 ComponentDrawer = NodePath("ComponentDrawer")
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://bx3fdswky2fv8"
 
 [node name="Cursor" type="Node2D" parent="CircuitEditorContainer/CircuitBoard" node_paths=PackedStringArray("Board")]
 z_index = 1000
-position = Vector2(1249, 1020)
+position = Vector2(1629, -30)
 script = ExtResource("3_48gtv")
 Board = NodePath("..")
 metadata/_custom_type_script = "uid://c5b5tnmumfths"
@@ -73,5 +73,5 @@ metadata/_custom_type_script = "uid://djc7wvw4fxtxh"
 
 [node name="Title" type="Label" parent="CircuitEditorContainer/ComponentDrawer"]
 layout_mode = 2
-text = "Circuit Components"
+text = "Electronic Components"
 label_settings = SubResource("LabelSettings_oc120")

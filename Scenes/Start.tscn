@@ -1,10 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6uscq0xiyt1n"]
 
+[ext_resource type="Texture2D" uid="uid://cayrvkn7iggmi" path="res://Assets/Logo.svg" id="1_nt0jr"]
 [ext_resource type="Script" uid="uid://cyafgmximtf05" path="res://CircuitBoardSelector.cs" id="1_og4jd"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_bupin"]
-font_size = 64
-font_color = Color(0, 0, 0, 1)
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -28,16 +25,20 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -158.0
-offset_right = 158.0
+offset_left = -200.0
+offset_right = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="StartStack"]
+[node name="MarginContainer" type="MarginContainer" parent="StartStack"]
 layout_mode = 2
-text = "CircuitSim"
-label_settings = SubResource("LabelSettings_bupin")
-horizontal_alignment = 1
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="TextureRect" type="TextureRect" parent="StartStack/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_nt0jr")
+expand_mode = 5
 
 [node name="CircuitsScrollContainer" type="ScrollContainer" parent="StartStack"]
 layout_mode = 2

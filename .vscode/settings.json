@@ -1,6 +1,9 @@
 {
-  "files.exclude": {
-    ".godot": true,
-    "**/*.uid": true
-  }
+	"files.associations": {
+		"*.lst": "properties"
+	},
+	"files.exclude": {
+		".godot": true,
+		"**/*.uid": true
+	}
 }

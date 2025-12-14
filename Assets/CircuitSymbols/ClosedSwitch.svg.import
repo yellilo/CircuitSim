@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyu8v7c3b8fq"
-path="res://.godot/imported/Icon.svg-78449159086ade621c5fc90cd1c2613f.ctex"
+uid="uid://cqrs3ksiujif5"
+path="res://.godot/imported/ClosedSwitch.svg-f6955f53afee8b55f56177f9a734c8fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icon.svg"
-dest_files=["res://.godot/imported/Icon.svg-78449159086ade621c5fc90cd1c2613f.ctex"]
+source_file="res://Assets/CircuitSymbols/ClosedSwitch.svg"
+dest_files=["res://.godot/imported/ClosedSwitch.svg-f6955f53afee8b55f56177f9a734c8fd.ctex"]
 
 [params]
 

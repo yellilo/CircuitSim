@@ -68,6 +68,8 @@ public partial class CircuitBoard : Control
     }
   }
 
+  public float WireScale => (float)BoardScale / 10;
+
   // --------------------
   //       Dragging
   // --------------------

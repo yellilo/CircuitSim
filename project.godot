@@ -16,7 +16,8 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="CircuitSim"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
-config/icon="res://Assets/icon.svg"
+boot_splash/image="uid://6fjaiyln4w47"
+config/icon="uid://dnyu8v7c3b8fq"
 
 [autoload]
 
@@ -24,8 +25,8 @@ Global="*res://Global.cs"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1600
+window/size/viewport_height=900
 window/size/mode=2
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
