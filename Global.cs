@@ -16,7 +16,7 @@ public partial class Global : Node
 	public override void _Ready()
 	{
 		SceneTree = GetTree();
-		Engine.MaxFps = 59;
+		Engine.MaxFps = 55;
 
 		var path = CircuitBoardManager.CircuitBoardsDirectory + "/test/components.lst";
 

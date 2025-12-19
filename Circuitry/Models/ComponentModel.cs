@@ -18,7 +18,7 @@ public abstract class ComponentModel(string id, CircuitComponentType type) : Mod
 }
 
 /// <summary>
-/// Component model that has a defined position, orientation and size.
+/// A component model that has a defined position, orientation and size.
 /// This includes every type of component except wires, which may span any size between two junctions.
 /// </summary>
 public abstract class RigidComponentModel(string id, CircuitComponentType type) : ComponentModel(id, type)

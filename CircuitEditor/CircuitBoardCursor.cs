@@ -50,7 +50,7 @@ public partial class CircuitBoardCursor : Node2D
 
 	public override void _Ready()
 	{
-		ComponentType = CircuitComponentType.FixedResistor;
+		ComponentType = CircuitComponentType.Lamp;
 		ZIndex = 1000;
 		AddChild(Tooltip);
 		Tooltip.SetAnchorsPreset(Control.LayoutPreset.Center);
@@ -67,8 +67,6 @@ public partial class CircuitBoardCursor : Node2D
 
 	public override void _Process(double delta)
 	{
-		Board = GetParent<CircuitBoard>();
-
 		BoardPosition = Board.LocalToBoardPosition(Board.GetLocalMousePosition());
 		Tooltip.Text = BoardPosition.ToString();
 	}

@@ -47,13 +47,11 @@ public partial class CircuitSymbol : Node2D
 
 		var size = Texture.GetSize() / 16 * Board.WireScale;
 
-		if (IsVertical) DrawLine(new(0, 0), new(0, Board.BoardScale * 2), Colors.Black, Board.WireScale);
-		else DrawLine(new(-Board.BoardScale, 0), new(Board.BoardScale, 0), Colors.Black, Board.WireScale);
+		if (IsVertical) DrawLine(new(0, 0), new(0, Board.Metadata.Scale * 2), Colors.Black, Board.WireScale);
+		else DrawLine(new(-Board.Metadata.Scale, 0), new(Board.Metadata.Scale, 0), Colors.Black, Board.WireScale);
 
 		DrawTextureRect(Texture, new(-size.X / 2, -size.Y / 2, size.X, size.Y), false);
 	}
-
-
 
 	public CircuitBoard? Board
 	{
