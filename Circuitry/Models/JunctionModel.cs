@@ -1,6 +1,6 @@
 using Godot;
 
-namespace CircuitSim.Circuitry.Models;
+namespace CircuitSim.Circuitry;
 
 public class JunctionModel(string id) : Model(id)
 {

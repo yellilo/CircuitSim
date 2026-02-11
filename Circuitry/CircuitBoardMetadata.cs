@@ -11,5 +11,7 @@ public class CircuitBoardMetadata(string id)
 	public int Scale = 60;
 	public Vector2I Offset = Vector2I.Zero;
 
+	public bool GridVisible = true;
+
 	public DateTime LastEdited = DateTime.UtcNow;
 }

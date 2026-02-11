@@ -1,4 +1,4 @@
-namespace CircuitSim.Circuitry.Models;
+namespace CircuitSim.Circuitry;
 
 public abstract class Model(string id)
 {

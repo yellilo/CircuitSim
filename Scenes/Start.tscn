@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6uscq0xiyt1n"]
 
 [ext_resource type="Texture2D" uid="uid://cayrvkn7iggmi" path="res://Assets/Logo.svg" id="1_nt0jr"]
-[ext_resource type="Script" uid="uid://cyafgmximtf05" path="res://CircuitBoardSelector.cs" id="1_og4jd"]
+[ext_resource type="Script" uid="uid://bstmkoxc2jrgr" path="res://Start/CircuitBoardSelector.cs" id="1_og4jd"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -40,11 +40,8 @@ layout_mode = 2
 texture = ExtResource("1_nt0jr")
 expand_mode = 5
 
-[node name="CircuitsScrollContainer" type="ScrollContainer" parent="StartStack"]
+[node name="CircuitBoardSelector" type="ScrollContainer" parent="StartStack"]
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("1_og4jd")
-
-[node name="CircuitsContainer" type="VBoxContainer" parent="StartStack/CircuitsScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+metadata/_custom_type_script = "uid://bstmkoxc2jrgr"

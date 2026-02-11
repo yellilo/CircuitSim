@@ -1,7 +1,25 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://7unhdd07ujhj"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://7unhdd07ujhj"]
 
 [ext_resource type="Texture2D" uid="uid://ccecdmk7gvcyc" path="res://Assets/Checkbox/Checked.svg" id="1_d0ik5"]
 [ext_resource type="Texture2D" uid="uid://fe6tfdadfsy1" path="res://Assets/Checkbox/Unchecked.svg" id="2_d3ct4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmxwl"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.80049086, 0.80049074, 0.80049074, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xamtf"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.89059, 0.89059, 0.89059013, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oc120"]
 
@@ -46,6 +64,14 @@ corner_radius_bottom_left = 8
 anti_aliasing = false
 
 [resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_dmxwl")
+Button/styles/normal = SubResource("StyleBoxFlat_xamtf")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
 MenuBar/colors/font_color = Color(0, 0, 0, 1)
 MenuBar/colors/font_disabled_color = Color(0, 0, 0, 1)
 MenuBar/colors/font_focus_color = Color(0, 0, 0, 1)
