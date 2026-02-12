@@ -11,35 +11,50 @@ namespace CircuitSim.Editor;
 [GlobalClass]
 public partial class CircuitBoard : Control
 {
-	public bool HasUnsavedChanges = false;
+	public CircuitBoardMetadata Metadata;
 
-	public CircuitBoardContent Content;
-	public CircuitBoardCursor Cursor;
-	public CircuitBoardGrid Grid;
-
+	// Save paths
 	public readonly string DirectoryPath;
 	public readonly string ComponentsFilePath;
 	public readonly string JunctionsFilePath;
+	
+	// Nodes
+	public CircuitBoardGrid Grid;
+	public CircuitBoardContent Content;
+	public CircuitBoardCursor Cursor;
 
-	public CircuitBoardMetadata Metadata;
-
-	// Liv lmts
+	// Models
 	public Dictionary<string, ComponentModel> ComponentModels;
 	public Dictionary<string, JunctionModel> JunctionModels;
-	// Models
+
+	// Live circuit elements
 	public Dictionary<string, Component> Components = [];
 	public Dictionary<string, Junction> Junctions = [];
 
+	// State
+	public bool HasUnsavedChanges = false;
+	public bool IsHovered = false;
+
+	// --------------------
+	//        Events
+	// --------------------
+
+	// Adding/removing elements
 	public event Action<Component>? ComponentAdded;
 	public event Action<Junction>? JunctionAdded;
 
+	// Saving
 	public event Action? Changed;
 	public event Action? Saved;
+
+	// Board input
 	public event Action? Dragged;
 	public event Action? Pressed;
 	public event Action? Zoomed;
 
-	public bool IsHovered = false;
+	// --------------------
+	//    Initialisation
+	// --------------------
 
 	public CircuitBoard()
 	{
@@ -74,6 +89,41 @@ public partial class CircuitBoard : Control
 		AddChild(Content);
 		AddChild(Cursor);
 	}
+
+	public override void _Ready()
+	{
+		SetDefaultCursorShape(CursorShape.Cross);
+
+		MouseEntered += () => IsHovered = true;
+		MouseExited += () => IsHovered = false;
+
+		Changed += () =>
+		{
+			HasUnsavedChanges = true;
+			Global.SetTitle(Metadata.Name + "*");
+		};
+
+		Saved += () =>
+		{
+			HasUnsavedChanges = false;
+			Global.SetTitle(Metadata.Name);
+		};
+
+		ComponentAdded += (_) => Changed?.Invoke();
+		JunctionAdded += (_) => Changed?.Invoke();
+
+		Dragged += Changed;
+		Zoomed += Changed;
+
+		foreach (var model in ComponentModels.Values)
+		{
+			AddComponentFromModel(model);
+		}
+	}
+
+	// --------------------
+	//   Editing Elements
+	// --------------------
 
 	public Junction AddJunction(Junction junction)
 	{
@@ -122,37 +172,6 @@ public partial class CircuitBoard : Control
 		return AddComponent(Component.FromModel(model));
 	}
 
-	public override void _Ready()
-	{
-		SetDefaultCursorShape(CursorShape.Cross);
-
-		MouseEntered += () => IsHovered = true;
-		MouseExited += () => IsHovered = false;
-
-		Changed += () =>
-		{
-			HasUnsavedChanges = true;
-			Global.SetTitle(Metadata.Name + "*");
-		};
-
-		Saved += () =>
-		{
-			HasUnsavedChanges = false;
-			Global.SetTitle(Metadata.Name);
-		};
-
-		ComponentAdded += (_) => Changed?.Invoke();
-		JunctionAdded += (_) => Changed?.Invoke();
-
-		Dragged += Changed;
-		Zoomed += Changed;
-
-		foreach (var model in ComponentModels.Values)
-		{
-			if (model is ComponentModel rigidModel) AddComponentFromModel(rigidModel);
-		}
-	}
-
 	// --------------------
 	//        Input
 	// --------------------
@@ -175,21 +194,21 @@ public partial class CircuitBoard : Control
 		if (!e.IsPressed()) return;
 
 		// Zoom
-		if (e.IsAction("zoom_in")) Zoom(5);
-		else if (e.IsAction("zoom_out")) Zoom(-5);
+		if (e.IsAction("zoom_in")) Zoom(ZoomInterval);
+		else if (e.IsAction("zoom_out")) Zoom(-ZoomInterval);
 	}
 
 	// --------------------
 	//       Scaling
 	// --------------------
 
+	public static int ZoomInterval = 5;
+
 	public void Zoom(int scaleModifier)
 	{
 		Metadata.Scale = Math.Clamp(Metadata.Scale + scaleModifier, 30, 120);
 		Zoomed?.Invoke();
 	}
-
-	public float WireScale => (float)Metadata.Scale / 10;
 
 	// --------------------
 	//       Dragging
