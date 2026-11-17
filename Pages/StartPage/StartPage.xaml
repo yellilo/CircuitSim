@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="CircuitSim.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CircuitSim"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="CircuitSim" FontSize="64" />
+            <Button Click="OnCreateNewBoardPressed">Create new board...</Button>
+            <local:CircuitSymbol SymbolType="Cell" SymbolScale="10" />
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CircuitSim (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CircuitSim (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

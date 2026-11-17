@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="CircuitSim.EditorSidebar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CircuitSim"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+>
+    <StackPanel Padding="0,0,12,0">
+
+        <TextBlock Text="ELECTRONIC COMPONENTS" FontWeight="Bold" Margin="0,12,0,12" />
+        <local:EditorComponentSelector />
+
+        <Rectangle
+            Height="1"
+            Margin="4,12,4,12"
+            Fill="{ThemeResource DividerStrokeColorDefaultBrush}"
+        />
+
+        <ScrollView>
+            <StackPanel Padding="4,0,16,0">
+                <TextBlock Text="COMPONENT INSPECTOR" FontWeight="Bold" />
+                <FontIcon
+                    Glyph="&#xE8B0;"
+                    FontSize="64"
+                    Margin="0,80,0,32"
+                    Foreground="{ThemeResource TextFillColorTertiary}"
+                />
+                <TextBlock
+                    Text="Select a component by clicking on it with your cursor to inspect or modify its properties."
+                    TextAlignment="Center"
+                    TextWrapping="Wrap"
+                    Width="300"
+                    Foreground="{ThemeResource TextFillColorTertiary}"
+                />
+            </StackPanel>
+        </ScrollView>
+    </StackPanel>
+</UserControl>
