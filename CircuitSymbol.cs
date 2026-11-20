@@ -1,10 +1,11 @@
+using CircuitSim.Circuitry;
 using Microsoft.Graphics.Canvas;
-using Microsoft.Graphics.Canvas.Brushes;
 using Microsoft.Graphics.Canvas.Text;
 using Microsoft.Graphics.Canvas.UI.Xaml;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
+using System;
 using System.Numerics;
 using Windows.UI;
 
@@ -48,8 +49,19 @@ public sealed partial class CircuitSymbol : UserControl
         {
             _scale = value;
             float size = value * BaseSize;
-            Grid.Width = size;
-            Grid.Height = size;
+            Canvas.Width = size;
+            Canvas.Height = size;
+            Canvas.Invalidate();
+        }
+    }
+
+    private ComponentOrientation _orientiation = ComponentOrientation.Right;
+    public ComponentOrientation Orientation
+    {
+        get => _orientiation;
+        set
+        {
+            _orientiation = value;
             Canvas.Invalidate();
         }
     }
@@ -88,8 +100,7 @@ public sealed partial class CircuitSymbol : UserControl
 
         var color = IsPreview ? PreviewColor : DefaultColor;
 
-        // Draws the main part of the circuit symbol as a custom font character
-        ds.DrawTextLayout(layout, new Vector2(glyphLeft, 0), color);
+        ds.Transform = Matrix3x2.CreateRotation(MathF.PI * (float)Orientation / 2, new(halfSize));
 
         // Draws short sections of wire coming out either side of the circuit symbol
         ds.DrawLine(
@@ -105,5 +116,13 @@ public sealed partial class CircuitSymbol : UserControl
             color,
             SymbolScale
         );
+
+        if (SymbolType == CircuitSymbolType.Ammeter || SymbolType == CircuitSymbolType.Ohmmeter || SymbolType == CircuitSymbolType.Voltmeter)
+        {
+            ds.Transform = Matrix3x2.Identity;
+        }
+
+        // Draws the main part of the circuit symbol as a custom font character
+        ds.DrawTextLayout(layout, new Vector2(glyphLeft, 0), color);
     }
 }

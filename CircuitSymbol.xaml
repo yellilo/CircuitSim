@@ -9,7 +9,5 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
 >
-    <Grid x:Name="Grid" Width="10" Height="10">
-        <canvas:CanvasControl x:Name="Canvas" />
-    </Grid>
+    <canvas:CanvasControl x:Name="Canvas" Width="10" Height="10" />
 </UserControl>

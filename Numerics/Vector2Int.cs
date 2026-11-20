@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CircuitSim.Circuitry;
+using System;
 using System.Numerics;
 
 namespace CircuitSim.Numerics;
@@ -12,9 +13,9 @@ public struct Vector2Int : IEquatable<Vector2Int>
     public static readonly Vector2Int One = new(1);
 
     public static readonly Vector2Int Right = new(1, 0);
-    public static readonly Vector2Int Up = new(0, -1);
     public static readonly Vector2Int Down = new(0, 1);
-    public static readonly Vector2Int Left = new(-1, 0);
+    public static readonly Vector2Int Left = -Right;
+    public static readonly Vector2Int Up = -Down;
 
     public Vector2Int(int x, int y)
     {
@@ -26,6 +27,30 @@ public struct Vector2Int : IEquatable<Vector2Int>
     {
         X = uniform;
         Y = uniform;
+    }
+
+    public Vector2Int(ComponentOrientation orientation)
+    {
+        Vector2Int vec;
+
+        switch (orientation)
+        {
+            case ComponentOrientation.Down:
+                vec = Down;
+                break;
+            case ComponentOrientation.Left:
+                vec = Left;
+                break;
+            case ComponentOrientation.Up:
+                vec = Up;
+                break;
+            default:
+                vec = Right;
+                break;
+        }
+
+        X = vec.X;
+        Y = vec.Y;
     }
 
     // Rounding
